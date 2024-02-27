@@ -13,17 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: CheckOut_Code
+    - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Docker Login
+        
+    - name: Docker login
       env:
-        DOCKER_USER: ${{ secrets.DOCKERS_USER }}
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         echo "Iniciando login"
-        docker login -u $secrets.DOCKERS_USER -p $secrets.DOCKER_PASSWORD
+        docker login -u $secrets.DOCKER_USER -p $secrets.DOCKER_PASSWORD
         echo "Fin del login"
         
     # - name: Build the Docker image
