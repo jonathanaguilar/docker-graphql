@@ -34,7 +34,7 @@ jobs:
         NEW_VERSION: "hola"
       run: |
         docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-        echo "New Version: ${{ env.NEW_VERSION }}"
+        echo "New Version: $NEW_VERSION"
 
     # - name: Build Docker image
     #   run: |
