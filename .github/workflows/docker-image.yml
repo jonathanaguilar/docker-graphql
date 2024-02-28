@@ -30,8 +30,8 @@ jobs:
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        # NEW_VERSION: ${{ steps.version.output.version }}
-        NEW_VERSION: "hola"
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+        
       run: |
         docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
         echo "New Version: $NEW_VERSION"
